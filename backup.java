@@ -797,15 +797,15 @@ public class GuardianOfArchipelago {
         int[] distances = new int[numRoutes];
 
         // Generate distances based on index with increasing values
-        for (i = 1; i < locations.length; i++) {
-            System.out.println("(" + (i) + ") " + locations[i]);
+        for (int i = 0; i < numRoutes; i++) {
+            distances[i] = random.nextInt(81) + 10; // Distance range: 10-90 km, increasing with index
         }
 
         // Sort distances array to ensure increasing order
         Arrays.sort(distances);
 
         // Display routes with corresponding distances
-        for (int i = 1; i < numRoutes; i++) {
+        for (int i = 0; i < numRoutes; i++) {
             System.out.println("(" + (i + 1) + ") " + distances[i] + " meters - " + routesArray[i]);
         }
 
@@ -924,6 +924,7 @@ public class GuardianOfArchipelago {
     public static void Islands() {
         String[] location = { "Autumnvale ", "Frostpeak", "Kindlewood ", "Aquaville" };
         Destination(location);
+        
     }
 
     public static void Destination(String[] locations) {
@@ -971,6 +972,7 @@ public class GuardianOfArchipelago {
                             System.out.println("Invalid input.");
                     }
                     System.out.println("\n\nChecklist:\n(/) Autumnvale\n( ) Frostpeak\n( ) Kindlewood\n( ) Aquaville");
+                    Destination2A(locations);
                     // continueProgram2 = false;
                     break;
                 case 2:
@@ -1048,7 +1050,7 @@ public class GuardianOfArchipelago {
     }
     
     
-    public static void Destination2(String[] locations) {
+    public static void Destination2A(String[] locations) {
         int choice2 = 0;
         boolean validInput = false;
 
@@ -1074,7 +1076,7 @@ public class GuardianOfArchipelago {
                 case 1:
                 //choice = input sa island
                 //chosenRoutes = input sa routes
-                    System.out.println("\nYou choose the island of " + locations[choice2 - 1] + "."); // autumnvale
+                    System.out.println("\nYou choose the island of " + locations[choice2] + "."); // autumnvale
                     System.out.print(
                             "\nDESCRIPTION: Autumn or Fall is the season on this island. In contrast to its beautiful season, strong to violent winds are what covers the entire island.\n");
                     chosenRoutes2 = displayRoutes2(1);
@@ -1091,11 +1093,11 @@ public class GuardianOfArchipelago {
                         default:
                             System.out.println("Invalid input.");
                     }
-                    System.out.println("\n\nChecklist:\n(/) Autumnvale\n( ) Frostpeak\n( ) Kindlewood\n( ) Aquaville");
+                    System.out.println("\n\nChecklist:\n(/) Autumnvale\n(/) Frostpeak\n( ) Kindlewood\n( ) Aquaville");
                     // continueProgram2 = false;
                     break;
                 case 2:
-                    System.out.println("\nYou choose the island of " + locations[choice - 1] + "."); // frostpeak
+                    System.out.println("\nYou choose the island of " + locations[choice2] + "."); // frostpeak
                     System.out.println(
                             "\nDESCRIPTION: An island of ice and snow. Frostpeak is the territory of wolves which has a keen sense of smell, hearing, and vision.\n");
                     chosenRoutes2 = displayRoutes2(2);
@@ -1112,11 +1114,11 @@ public class GuardianOfArchipelago {
                         default:
                             System.out.println("Invalid input.");
                     }
-                    System.out.println("\n\nChecklist:\n( ) Autumnvale\n(/) Frostpeak\n( ) Kindlewood\n( ) Aquaville");
+                    System.out.println("\n\nChecklist:\n(/) Autumnvale\n( ) Frostpeak\n(/) Kindlewood\n( ) Aquaville");
                     // continueProgram2 = false;
                     break;
                 case 3:
-                    System.out.println("\nYou choose the island of " + locations[choice - 1] + "."); // kindlewood
+                    System.out.println("\nYou choose the island of " + locations[choice2] + "."); // kindlewood
                     System.out.println(
                             "\nDESCRIPTION: One of the Forbidden Islands known for its earthquake phenomenon and is best described for its weather condition - summer.\n");
                     chosenRoutes2 = displayRoutes2(3);
@@ -1133,7 +1135,7 @@ public class GuardianOfArchipelago {
                         default:
                             System.out.println("Invalid input.");
                     }
-                    System.out.println("\n\nChecklist:\n( ) Autumnvale\n( ) Frostpeak\n(/) Kindlewood\n( ) Aquaville");
+                    System.out.println("\n\nChecklist:\n(/) Autumnvale\n( ) Frostpeak\n( ) Kindlewood\n(/) Aquaville");
                     // continueProgram2 = false;
                     break;
                 default:
